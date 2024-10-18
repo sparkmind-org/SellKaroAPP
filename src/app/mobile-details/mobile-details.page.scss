@@ -3,6 +3,11 @@ hr {
    margin: 10px 0;
    width: 100%;
  }
+ .bgone {
+   --background: white; 
+   --box-shadow: none;  
+   --border: none;
+ }
  
  .text-red {
    text-align: center;

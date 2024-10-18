@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" class="bgnone" fill="clear" routerLink="/home">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title class="ion-text-center">Mobile phones
+      <ion-icon name="chevron-down-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+  <ion-row class="ion-text-center ion-justify-content-around">
+    <ion-button class="bgnone">
+      <ion-col>
+        <ion-icon name="bookmark-outline"></ion-icon><b>Save</b>
+      </ion-col>
+    </ion-button>
+    <ion-button class="bgnone">
+      <ion-col>
+        <ion-icon name="options-outline"></ion-icon><b>Filter</b>
+      </ion-col>
+    </ion-button>
+    <ion-button class="bgnone">
+      <ion-col>
+        <ion-icon name="funnel-outline"></ion-icon><b>Sort</b>
+      </ion-col>
+    </ion-button>
+  </ion-row>
+</ion-header>
+
+<ion-content>
+  <!-- Product Cards -->
+  <ion-card *ngFor="let product of products" routerLink="/mobile-details">
+    <ion-row class="btmborder">
+      <ion-col class="ion-text-center">
+        <ion-icon name="heart-outline" class="ion-float-left"></ion-icon>
+        <img [src]="product.image" alt="product image" class="ion-float-center"><br>
+      </ion-col>
+      <ion-col class="ion-border ion-padding">
+        <img src="../../assets/g star.svg" alt="Verified">
+        <span class="verified">Verified User</span>
+        <span class="ion-float-right verified">PREMIUM</span><br>
+        <b>{{ product.name }}</b>
+        <p style="font-size: 13px;">{{ product.description }} <br>
+          <ion-icon name="location-outline"></ion-icon> {{ product.location }}
+        </p>
+        <b class="txtcol">{{ product.price | currency: 'INR' }}</b><br>
+        <ion-button class="offerchat bgnone">
+          <span style="font-size: 3vw;">Make Offer</span>
+        </ion-button>
+        <ion-button class="chatoffer bgnone">
+          <span style="font-size: 3vw;">Chat</span>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-searchbar></ion-searchbar>
+</ion-content>

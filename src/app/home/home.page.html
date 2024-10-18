@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SELLKARO APPLICATION</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="colcard">
+    <!-- First Row: Two equal columns -->
+    <ion-row>
+      <ion-col size="6">
+        <ion-card class="card-item" routerLink="/place-ad">
+          <ion-icon name="business-outline" class="card-icon"></ion-icon>
+          <br>place an ad
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card class="card-item" routerLink="/mobile-phone">
+          <ion-icon name="phone-portrait-outline" class="card-icon"></ion-icon>
+          <br>mobile ad
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- Second Row: One wide column -->
+    <ion-row>
+      <ion-col size="12"> <!-- This spans the full width -->
+        <ion-card class="card-item-wide" routerLink="/tablets">
+          <ion-icon name="tablet-landscape-outline" class="card-icon"></ion-icon>
+          <br>tablets and mobiles ad
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

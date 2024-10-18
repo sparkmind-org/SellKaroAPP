@@ -1,0 +1,45 @@
+.bgnone {
+   --background: transparent;
+   --box-shadow: none;
+   --border: none;
+   --color:black;
+ }
+ 
+ .ion-border{
+   border-left: 1px solid gray;
+ }
+ 
+ .btmborder{
+   border-bottom: 1px solid gray;
+   padding-bottom: 5px;
+ }
+ 
+ .txtcol{
+   color: red;
+   float: right;
+ }
+ 
+ .offerchat{
+   border: 1px solid red;
+   background-color: lightcyan;
+   border-radius: 5px;
+   width: 30%;
+   font-size: 40%;
+ 
+ }
+ 
+ .chatoffer{
+   border: 1px solid red;
+   background-color: lightcyan;
+   border-radius: 5px;
+   width: 30%;
+   font-size: 40%;
+   float: right;
+ }
+ 
+ 
+ .verified{
+   color: green;
+   font-size: small;
+ }
+

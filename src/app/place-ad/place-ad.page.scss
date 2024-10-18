@@ -1,0 +1,39 @@
+.custom-button {
+   --color: red;
+   --border-color: red;
+     width: 100%;
+     height: 100%;
+    
+  
+ }
+ 
+ .nxtbtn {
+   --background: red;
+   --color: white;
+   inline-size: 100%;
+ }
+ 
+ .bgnone {
+   --background: transparent;
+   --box-shadow: none;
+   --border: none;
+ }
+ 
+ ion-card {
+   --background: #fff;
+   --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 12px;
+   margin-bottom: 16px;
+ }
+ 
+ ion-item {
+   --border-radius: 8px;
+ }
+ 
+ ion-input, ion-select, ion-textarea {
+   --placeholder-color: #9E9E9E;
+   --background: white;
+   --box-shadow: none;
+   --border-radius: 8px;
+   --padding-start: 10px;
+ }

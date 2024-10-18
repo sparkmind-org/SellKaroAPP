@@ -1,0 +1,45 @@
+hr {
+   border-bottom: 1px solid #4d4848;
+   margin: 10px 0;
+   width: 100%;
+ }
+ 
+ .text-red {
+   text-align: center;
+   padding: 40px;
+   width: 100%;
+ }
+ 
+ .text-btn {
+   border: 1px solid red;
+   width: 96%;
+   color: red;
+   border-radius: 5px;
+ }
+ 
+ .imgsize {
+   width: 100%;
+   height: auto; /* Keeps the aspect ratio */
+ }
+ 
+ .btntop {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   font-size: 30px;
+ }
+ 
+ .more-details {
+   color: red;
+   cursor: pointer;
+ }
+ 
+ .price {
+   color: red;
+   font-size: 1.5rem;
+ }
+ 
+ .see-more {
+   color: rgba(0, 0, 255, 0.68);
+   cursor: pointer;
+ }

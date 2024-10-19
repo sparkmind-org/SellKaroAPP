@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button  class="bgnone" >
+    <ion-button class="bgnone">
       <ion-back-button></ion-back-button>
     </ion-button>
     <ion-title class="ion-text-center">Place an ad</ion-title>
@@ -10,74 +10,71 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <h5 class="ion-text-center">You're almost there!</h5>
   <p class="ion-text-center">Include as much details and pictures as possible!</p>
 
-  <!-- Location Input Card -->
-  <ion-card>
-    <ion-item>
-      <ion-input label="Location" labelPlacement="floating" placeholder="Select location"></ion-input>
-      <ion-icon slot="end" name="location-outline" color="medium"></ion-icon>
-    </ion-item>
-  </ion-card>
+  <form [formGroup]="adForm" (ngSubmit)="onSubmit()">
 
-  <!-- Mobile Type Select Card -->
-  <ion-card>
-    <ion-item>
-      <ion-select label="Mobile Type" placeholder="Select mobile type">
-        <ion-select-option value="phone">Phone</ion-select-option>
-        <ion-select-option value="tablet">Tablet</ion-select-option>
-        <ion-select-option value="desktop">Desktop</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-card>
+    <!-- Location Input -->
+    <ion-card>
+      <ion-item>
+        <ion-input formControlName="location" label="Location" labelPlacement="floating" placeholder="Select location"></ion-input>
+        <ion-icon slot="end" name="location-outline" color="medium"></ion-icon>
+      </ion-item>
+    </ion-card>
 
-  <!-- Brand Select Card -->
-  <ion-card>
-    <ion-item>
-      <ion-select label="Brand" placeholder="Select brand">
-        <ion-select-option value="Apple">Apple</ion-select-option>
-        <ion-select-option value="Samsung">Samsung</ion-select-option>
-        <ion-select-option value="Vivo">Vivo</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-card>
+    <!-- Mobile Type -->
+    <ion-card>
+      <ion-item>
+        <ion-select formControlName="mobileType" label="Mobile Type" placeholder="Select mobile type">
+          <ion-select-option value="phone">Phone</ion-select-option>
+          <ion-select-option value="tablet">Tablet</ion-select-option>
+          <ion-select-option value="desktop">Desktop</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card>
 
-  <!-- Add Title Input Card -->
-  <ion-card>
-    <ion-item>
-      <ion-input label="Add Title" labelPlacement="floating" placeholder="Enter title"></ion-input>
-    </ion-item>
-  </ion-card>
+    <!-- Brand -->
+    <ion-card>
+      <ion-item>
+        <ion-select formControlName="brand" label="Brand" placeholder="Select brand">
+          <ion-select-option value="Apple">Apple</ion-select-option>
+          <ion-select-option value="Samsung">Samsung</ion-select-option>
+          <ion-select-option value="Vivo">Vivo</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card>
 
-  <!-- Description Textarea Card -->
-  <ion-card>
-    <ion-item>
-      <ion-textarea label="Describe" labelPlacement="floating" placeholder="Additional Info..."></ion-textarea>
-    </ion-item>
-  </ion-card>
+    <!-- Add Title -->
+    <ion-card>
+      <ion-item>
+        <ion-input formControlName="title" label="Add Title" labelPlacement="floating" placeholder="Enter title"></ion-input>
+      </ion-item>
+    </ion-card>
 
-  <!-- Add Pictures Button Card -->
-  <ion-card>
-    <ion-item lines="none">
-      <ion-button fill="outline" expand="block" class="custom-button">
-        <ion-icon name="camera-outline" slot="start"></ion-icon>
-        Add Pictures
-      </ion-button>
-    </ion-item>
-  </ion-card>
+    <!-- Description -->
+    <ion-card>
+      <ion-item>
+        <ion-textarea formControlName="description" label="Describe" labelPlacement="floating" placeholder="Additional Info..."></ion-textarea>
+      </ion-item>
+    </ion-card>
 
-  <!-- Price Input Card -->
-  <ion-card>
-    <ion-item>
-      <ion-input label="Price" labelPlacement="floating" placeholder="Enter price"></ion-input>
-    </ion-item>
-  </ion-card>
-  <ion-button routerLink="/mobile-phone" expand="block" size="large" class="nxtbtn">Next</ion-button>
+    <!-- Add Pictures -->
+    <ion-card>
+      <ion-item lines="none">
+        <input type="file" (change)="onImageSelected($event)" />
+      </ion-item>
+    </ion-card>
+
+    <!-- Price -->
+    <ion-card>
+      <ion-item>
+        <ion-input formControlName="price" label="Price" labelPlacement="floating" placeholder="Enter price"></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-button type="submit" expand="block" size="large" class="nxtbtn">Next</ion-button>
+
+  </form>
 </ion-content>
-
-  
-
-  
-

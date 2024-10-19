@@ -3,6 +3,9 @@
   "ignorePatterns": ["projects/**/*"],
   "overrides": [
     {
+      "env": {
+        "es6": true
+    },
       "files": ["*.ts"],
       "parserOptions": {
         "project": ["tsconfig.json"],

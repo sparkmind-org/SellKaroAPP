@@ -22,19 +22,17 @@
 
 <ion-content>
   <!-- Product Cards -->
-  <ion-card *ngFor="let product of products"  routerLink="/mobile-details">
-    
-    <ion-row class="btmborder" >
+  <ion-card *ngFor="let product of products" routerLink="/mobile-details">
+    <ion-row class="btmborder">
       <ion-col class="ion-text-center">
         <ion-icon name="heart-outline" class="ion-float-left"></ion-icon>
-        <img [src]="product.image" alt="forward" class="ion-float-right"><br>
-        
+        <img [src]="product.image" alt="Product Image" class="ion-float-right imageSize"><br>
       </ion-col>
       <ion-col class="ion-border">
         <img src="../../assets/g star.svg" alt="Verified">
         <span class="verified">Verified User</span>
         <span class="ion-float-right verified">PREMIUM</span><br>
-        <b>{{ product.name }}</b>
+        <b>{{ product.title }}</b>
         <p style="font-size: 13px;">{{ product.description }} <br>
           <ion-icon name="location-outline"></ion-icon> {{ product.location }}
         </p>
@@ -50,5 +48,3 @@
   </ion-card>
   <ion-searchbar></ion-searchbar>
 </ion-content>
-
-

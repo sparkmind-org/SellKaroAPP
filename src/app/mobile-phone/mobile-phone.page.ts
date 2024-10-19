@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdService } from '../service/ad.service'; // Correct the path
 
 @Component({
   selector: 'app-mobile-phone',
@@ -6,43 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mobile-phone.page.scss'],
 })
 export class MobilePhonePage implements OnInit {
+  products: any[] = [];
 
-  constructor() { }
-  products = [
-    {
-      id: 1,
-      name: 'Mobile Phones: Apple',
-      description: 'Apple iPhone 13 Pro Max, Age: 2 Years',
-      location: 'Pimpri-Chinchwad',
-      price: 80000,
-      image: 'assets/iphone.svg', // Replace with the actual path to your image
-      verified: true,
-      premium: true,
-    },
-    {
-      id: 2,
-      name: 'Mobile Phones: Apple',
-      description: 'Apple iPhone 13 Pro Max, Age: 2 Years',
-      location: 'Pimpri-Chinchwad',
-      price: 80000,
-      image: 'assets/iphone.svg',
-      verified: true,
-      premium: true,
-    },
-    {
-      id: 3,
-      name: 'Mobile Phones: Apple',
-      description: 'Apple iPhone 13 Pro Max, Age: 2 Years',
-      location: 'Pimpri-Chinchwad',
-      price: 80000,
-      image: 'assets/iphone.svg',
-      verified: true,
-      premium: true,
-    },
-  ];
+  constructor(private adService: AdService) {}
 
   ngOnInit() {
-    return;
+    this.loadProducts();
   }
 
+  loadProducts() {
+    // Fetch the products (ads) from db.json
+    this.adService.getAds().subscribe(data => {
+      this.products = data; // Populate the products array with fetched data
+    }, error => {
+      console.error('Error fetching ads', error);
+    });
+  }
 }

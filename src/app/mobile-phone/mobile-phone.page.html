@@ -1,0 +1,68 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-button fill="clear" slot="start" routerLink="/home" >
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+
+    <ion-title class="ion-text-center">Mobile phones
+      <ion-icon name="chevron-down-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-icon name="bookmark-outline"></ion-icon><b>Save</b>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="options-outline"></ion-icon><b>Filter</b>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="funnel-outline"></ion-icon><b>Sort</b>
+    </ion-col>
+  </ion-row>
+</ion-header>
+<br>
+<span>
+  <ion-searchbar placeholder="Search" style="position: fixed;"></ion-searchbar>
+</span>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let ad of ads" [routerLink]="['/mobile-detail', ad.id]">
+      <!-- <ion-label>
+        <img *ngIf="ad.pictures" [src]="ad.pictures" alt="{{ ad.addTitle }}" />
+        <h2>{{ ad.addTitle }}</h2>
+        <p>{{ ad.brand }} - {{ ad.price }}</p>
+      </ion-label> -->
+      <!-- <ion-card> -->
+        <ion-row>
+          <ion-col >
+            <ion-icon name="heart-outline" class="ion-float-left"></ion-icon>
+            <img *ngIf="ad.pictures" [src]="ad.pictures" alt="{{ ad.addTitle }}" class="image-display" />
+
+
+          </ion-col>
+          <ion-col >
+            <img src="../../assets/g star.svg" style="float: left;" alt="Verified">
+            <span class="verified" style="float: left;">Verified User</span>
+            <span class="ion-float-right verified" style="float: right;">PREMIUM</span><br>
+            <span >Mobile Phones:</span>{{ad.brand}} <br>
+            <div class="textsize">
+            <span>{{ad.brand}} {{ad.addTitle}}</span><br>
+            <ion-icon name="location-outline"></ion-icon> {{ad.location}}<br>
+           </div>
+           <span style="float: right; color: red;">$ {{ad.price}}</span><br>
+
+           <ion-button class="offerchat " fill="clear" style="width: 70px; height: 20px;">
+            <img src="../../assets/sale.svg" alt="sale" > Make Offer
+          </ion-button>
+          <ion-button class="chatoffer " fill="clear" style="width: 50px; height: 20px;">
+            <ion-icon name="chatbox-outline"></ion-icon> Chat
+          </ion-button>
+
+          </ion-col>
+        </ion-row>
+      <!-- </ion-card> -->
+    </ion-item>
+  </ion-list>
+
+</ion-content>

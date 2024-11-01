@@ -1,0 +1,73 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear" routerLink="/home" >
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title class="ion-text-center">Place Ad - 1</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="adForm" (ngSubmit)="onSubmit()">
+    <ion-card>
+
+    <ion-item>
+      <ion-input formControlName="location" labelPlacement="floating" label="Location" placeholder="Select location"></ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+
+    <ion-item>
+      <ion-select formControlName="mobileType" labelPlacement="floating" label="Mobile Type" placeholder="Select mobile type">
+        <ion-select-option value="phone">Phone</ion-select-option>
+        <ion-select-option value="tablet">Tablet</ion-select-option>
+        <ion-select-option value="desktop">Desktop</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+<ion-card>
+
+
+    <ion-item>
+      <ion-select formControlName="brand" labelPlacement="floating" label="Brand" placeholder="Select brand">
+        <ion-select-option value="Apple">Apple</ion-select-option>
+        <ion-select-option value="Samsung">Samsung</ion-select-option>
+        <ion-select-option value="Vivo">Vivo</ion-select-option></ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-input formControlName="addTitle" labelPlacement="floating" label="Add Title" placeholder="Enter add title"></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+
+    <ion-item>
+      <ion-textarea formControlName="description" labelPlacement="floating" label="Description" placeholder="Enter description"></ion-textarea>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+
+    <ion-item>
+      <ion-input formControlName="price" labelPlacement="floating" label="Price" placeholder="Enter price"></ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+
+    <ion-item>
+      <input type="file" (change)="onFileChange($event)" label="Add Picture"  />
+    </ion-item>
+  </ion-card>
+  <ion-card>
+
+    <ion-button expand="full" type="submit" color="danger">Next</ion-button>
+  </ion-card>
+
+  </form>
+</ion-content>

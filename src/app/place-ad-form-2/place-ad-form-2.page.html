@@ -1,0 +1,90 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear" routerLink="/place-ad-form" >
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title class="ion-text-center">Place Ad -Form 2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="adFormStep2" (ngSubmit)="onSubmit()">
+    <!-- Accompaniments -->
+     <ion-card>
+
+
+    <ion-item>
+      <ion-input formControlName="accompaniments" labelPlacement="floating" label="Accompaniments"></ion-input>
+    </ion-item>
+  </ion-card>
+
+    <!-- Condition -->
+  <ion-card>
+    <ion-item>
+      <ion-input formControlName="condition" labelPlacement="floating" label="Condition"></ion-input>
+    </ion-item>
+  </ion-card>
+
+    <!-- Damages on Devices -->
+  <ion-card>
+    <ion-item>
+      <ion-textarea formControlName="damagesondevices" labelPlacement="floating" label="Damages on Devices"></ion-textarea>
+    </ion-item>
+  </ion-card>
+
+    <!-- Version -->
+  <ion-card>
+    <ion-item>
+      <ion-input formControlName="version" labelPlacement="floating" label="Version"></ion-input>
+    </ion-item>
+  </ion-card>
+
+    <!-- Storage Capacity -->
+  <ion-card>
+    <ion-item>
+      <ion-input formControlName="storagecapacity" labelPlacement="floating" label="Storage Capacity"></ion-input>
+    </ion-item>
+  </ion-card>
+
+    <!-- Posted On -->
+  <ion-card>
+    <ion-item>
+      <ion-input formControlName="postedon" labelPlacement="floating" label="Posted On"></ion-input>
+    </ion-item>
+  </ion-card>
+
+    <!-- Color -->
+  <ion-card>
+    <ion-item>
+      <ion-input formControlName="color" labelPlacement="floating" label="Color"></ion-input>
+    </ion-item>
+  </ion-card>
+
+    <!-- Country -->
+  <ion-card>
+    <ion-item>
+      <ion-input formControlName="country" labelPlacement="floating" label="Country"></ion-input>
+    </ion-item>
+  </ion-card>
+
+    <!-- Warranty -->
+  <ion-card>
+    <ion-item>
+      <ion-input formControlName="warranty" label="Warranty" labelPlacement="floating" ></ion-input>
+    </ion-item>
+  </ion-card>
+
+    <!-- Seller -->
+  <ion-card>
+    <ion-item>
+      <ion-input formControlName="seller" labelPlacement="floating" label="Seller"></ion-input>
+    </ion-item>
+  </ion-card>
+
+    <!-- Submit Button -->
+  <ion-card>
+    <ion-button expand="full" type="submit" [disabled]="!adFormStep2.valid" color="danger">Submit</ion-button>
+  </ion-card>
+  </form>
+</ion-content>

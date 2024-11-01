@@ -1,0 +1,7 @@
+{
+  "name": "sellkaroapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -8,6 +8,8 @@ import { MobileDetailPageRoutingModule } from './mobile-detail-routing.module';
 
 import { MobileDetailPage } from './mobile-detail.page';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,9 @@ import { MobileDetailPage } from './mobile-detail.page';
     IonicModule,
     MobileDetailPageRoutingModule
   ],
-  declarations: [MobileDetailPage]
+  declarations: [MobileDetailPage],
+
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]  // Add this line
+
 })
 export class MobileDetailPageModule {}

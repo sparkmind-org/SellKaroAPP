@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-toolbar>
-    <ion-button fill="clear" slot="start" routerLink="/home" >
+    <ion-button fill="clear" slot="start" routerLink="/home">
       <ion-icon name="arrow-back"></ion-icon>
     </ion-button>
 
@@ -22,47 +22,57 @@
   </ion-row>
 </ion-header>
 <br>
-<span>
-  <ion-searchbar placeholder="Search" style="position: fixed;"></ion-searchbar>
-</span>
+  <ion-searchbar></ion-searchbar>
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let ad of ads" [routerLink]="['/mobile-detail', ad.id]">
-      <!-- <ion-label>
+    <ion-card>
+      <ion-item *ngFor="let ad of ads" [routerLink]="['/mobile-detail', ad.id]">
+        <ion-thumbnail slot="start">
+          <!-- Display the first image as a preview -->
+          <img *ngIf="ad.pictures.length > 0" [src]="ad.pictures[0]" alt="Ad Image Preview" />
+        </ion-thumbnail>
+
+
+      <!-- <ion-item *ngFor="let ad of ads" [routerLink]="['/mobile-detail', ad.id]"> -->
+        <!-- <ion-label>
         <img *ngIf="ad.pictures" [src]="ad.pictures" alt="{{ ad.addTitle }}" />
         <h2>{{ ad.addTitle }}</h2>
         <p>{{ ad.brand }} - {{ ad.price }}</p>
       </ion-label> -->
-      <!-- <ion-card> -->
-        <ion-row>
-          <ion-col >
-            <ion-icon name="heart-outline" class="ion-float-left"></ion-icon>
-            <img *ngIf="ad.pictures" [src]="ad.pictures" alt="{{ ad.addTitle }}" class="image-display" />
+        <!-- <ion-card> -->
+          <ion-grid>
 
+            <ion-row>
+              <ion-col >
+                <ion-icon name="heart-outline" class="ion-float-left"></ion-icon>
+                <img *ngIf="ad.pictures" [src]="ad.pictures" alt="{{ ad.addTitle }}" class="image-display" height="80px" width="80px" />
+              </ion-col>
+              <ion-col style="float: right;" >
+                <img src="../../assets/g star.svg" style="float: left;" alt="Verified">
+                <span class="verified" style="float: left;">Verified User</span>
+                <span class="ion-float-right verified" style="float: right;">PREMIUM</span><br>
+                <span>Mobile Phones:</span>{{ad.brand}} <br>
+                <div class="textsize">
+                  <span>{{ad.brand}} {{ad.addTitle}}</span><br>
+                  <ion-icon name="location-outline"></ion-icon> {{ad.location}}<br>
+                </div>
+                <span style="float: right; color: red;">$ {{ad.price}}</span><br>
 
-          </ion-col>
-          <ion-col >
-            <img src="../../assets/g star.svg" style="float: left;" alt="Verified">
-            <span class="verified" style="float: left;">Verified User</span>
-            <span class="ion-float-right verified" style="float: right;">PREMIUM</span><br>
-            <span >Mobile Phones:</span>{{ad.brand}} <br>
-            <div class="textsize">
-            <span>{{ad.brand}} {{ad.addTitle}}</span><br>
-            <ion-icon name="location-outline"></ion-icon> {{ad.location}}<br>
-           </div>
-           <span style="float: right; color: red;">$ {{ad.price}}</span><br>
+                <ion-button class="offerchat " fill="clear" style="width: 70px; height: 20px;">
+                  <img src="../../assets/sale.svg" alt="sale"> Make Offer
+                </ion-button>
+                <ion-button class="chatoffer " fill="clear" style="width: 50px; height: 20px;">
+                  <ion-icon name="chatbox-outline"></ion-icon> Chat
+                </ion-button>
 
-           <ion-button class="offerchat " fill="clear" style="width: 70px; height: 20px;">
-            <img src="../../assets/sale.svg" alt="sale" > Make Offer
-          </ion-button>
-          <ion-button class="chatoffer " fill="clear" style="width: 50px; height: 20px;">
-            <ion-icon name="chatbox-outline"></ion-icon> Chat
-          </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
 
-          </ion-col>
-        </ion-row>
-      <!-- </ion-card> -->
-    </ion-item>
+        <!-- </ion-card> -->
+      </ion-item>
+    </ion-card>
+
   </ion-list>
 
 </ion-content>

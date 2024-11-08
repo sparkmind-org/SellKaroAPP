@@ -1,4 +1,29 @@
-.see-more {
-  color: rgba(0, 0, 255, 0.68);
+.image-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: #f4f4f8;
+}
+
+.arrow-container ion-icon {
+  font-size: 36px;
+  color: #3880ff;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-display {
+  text-align: center;
+}
+
+.displayed-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
 }

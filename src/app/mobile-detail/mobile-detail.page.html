@@ -1,94 +1,48 @@
 <ion-header>
-
-
   <ion-toolbar>
     <ion-button fill="clear" routerLink="/mobile-phone" slot="start">
-      <ion-icon name="arrow-back" fill="clear"></ion-icon>
+      <ion-icon name="arrow-back"></ion-icon>
     </ion-button>
-    <ion-title>{{ad.brand}} {{ ad?.addTitle }}</ion-title>
+    <ion-title>{{ ad?.title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="ad">
-  <!-- <ion-card-header>
-      <ion-card-title>{{ ad.addTitle }}</ion-card-title>
-      <ion-card-subtitle>{{ ad.brand }} - {{ ad.price }}</ion-card-subtitle>
-    </ion-card-header> -->
+<ion-content *ngIf="!loading; else loadingTemplate">
+  <ion-card *ngIf="ad">
+    <!-- Image Carousel with Left and Right Arrows -->
+    <ion-row class="image-carousel">
+      <ion-col size="1" class="arrow-container">
+        <ion-icon
+          name="arrow-back-circle"
+          (click)="previousImage()"
+          *ngIf="currentImageIndex > 0"
+        ></ion-icon>
+      </ion-col>
 
-  <ion-card-content>
-    <!-- <img *ngIf="ad.pictures" [src]="ad.pictures" alt="{{ ad.addTitle }}" width="100%" /> -->
-    <ion-slides pager="true">
-      <ion-slide *ngFor="let image of ad.pictures">
-        <img [src]="image" alt="Ad Image" />
-      </ion-slide>
-    </ion-slides>
-    <ion-card class="ion-padding">
+      <ion-col size="10" class="image-display">
+        <img [src]="ad.pictures[currentImageIndex]" class="displayed-image" alt="Ad Image" />
+      </ion-col>
 
-      <span style="color: red; display: flex; justify-content: center;"><strong>AED </strong>{{ad.price}}</span>
-      <strong style="display: flex; justify-content: center;">
-        {{ad.brand}} {{ad.addTitle}}
-      </strong>
+      <ion-col size="1" class="arrow-container">
+        <ion-icon
+          name="arrow-forward-circle"
+          (click)="nextImage()"
+          *ngIf="ad && currentImageIndex < ad.pictures.length - 1"
+        ></ion-icon>
+      </ion-col>
+    </ion-row>
 
-      <div class="ion-padding">
-        <Strong style="font-size: 25px;"><u>Details</u></Strong>
-        <p><Strong>Acconpaniments:</Strong> {{ad.accompaniments}}</p>
-        <p><strong>Condition:</strong> {{ ad.condition }}</p>
-        <p><strong>Damages on Device:</strong> {{ ad.damagesondevices }}</p>
-        <p><strong>Version:</strong> {{ ad.version }}</p>
-        <p><strong>Storage Capacity:</strong> {{ ad.storagecapacity }}</p>
-        <p><strong>Posted On:</strong> {{ ad.postedon}}</p>
-
-        <span style="display: flex; justify-content: center; color: red;">Show more details</span>
-
-      </div>
-
-
-      <ion-button fill="clear" class="box-border" style=" display: flex;border: 2px solid red;
-      width: 100%;
-      justify-content: center;
-      color: red; border-radius: 5px;">Make an Offer</ion-button>
-
-    </ion-card>
-
-    <ion-card>
-
-      <div class="ion-padding">
-        <Strong style="font-size: 25px;"><u>Description</u></Strong> <br>
-        <p>{{ad.brand}} {{ad.addTitle}} {{ad.storagecapacity}}</p>
-        <p>Color: {{ad.color}}</p>
-        <p>Country: {{ad.country}}</p>
-        <p>Warranty: {{ad.warranty}}</p>
-        <span style="display: flex; justify-content: center; color: red;">Show more description</span>
-      </div>
-    </ion-card>
-
-    <ion-card class="ion-padding">
-
-      <div >
-        <strong style="font-size: 25px;"><u>Location</u></strong><br>
-        <span>
-          <ion-icon name="location-outline"> </ion-icon> {{ad.location}}
-        </span>
-      </div>
-    </ion-card>
-
-    <ion-card>
-
-      <ion-row>
-        <ion-col size="auto">
-          <ion-icon name="person-circle-outline" style="font-size: 50px;" class="ion-padding"></ion-icon>
-        </ion-col>
-        <ion-col>
-          <p>
-            <span>Seller<br><b>{{ ad.seller }}</b><br></span>
-            <img src="../../assets/Group 69.png" alt="verified user">
-          </p>
-        </ion-col>
-        <ion-col>
-          2 items live <br>
-          <span class="see-more">See more</span>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-  </ion-card-content>
+    <!-- Display Ad Details -->
+    <ion-card-content>
+      <h2>AED {{ ad.price }}</h2>
+      <h3>{{ ad.brand }} {{ ad.title }}</h3>
+      <p><strong>Model:</strong> {{ ad.model }}</p>
+      <p><strong>Storage Capacity:</strong> {{ ad.storagecapacity }}</p>
+      <ion-button expand="full" color="success">Make Offer</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+<ng-template #loadingTemplate>
+  <ion-spinner name="dots" color="primary" style="display: flex; justify-content: center; margin-top: 20px;"></ion-spinner>
+</ng-template>

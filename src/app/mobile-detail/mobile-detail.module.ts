@@ -15,7 +15,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     CommonModule,
     FormsModule,
     IonicModule,
-    MobileDetailPageRoutingModule
+    MobileDetailPageRoutingModule,
   ],
   declarations: [MobileDetailPage],
 
